@@ -10,7 +10,7 @@ port = 8787
 [[d1_databases]]
 binding = "DB"
 database_name = "budge"
-database_id = "budge"
+database_id = "<your-development-database-id>" # Replace with actual ID from Cloudflare dashboard
 migrations_dir = "workers/migrations"
 
 # Environment variables (replace with your own values in production)
@@ -20,14 +20,14 @@ JWT_SECRET = "budge_development_secret"
 # Production settings
 [env.production]
 workers_dev = false
-route = "api.budge.app/*"
-zone_id = "your-zone-id"
+route = "api.budge-app.pages.dev/*" # Updated to match Cloudflare Pages URL
+zone_id = "your-zone-id" # Replace with your actual zone_id if using a custom domain
 
 # Production database 
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "budge_prod"
-database_id = "your-production-database-id"
+database_id = "<your-production-database-id>" # Replace with actual ID from Cloudflare dashboard
 migrations_dir = "workers/migrations"
 
 # Production environment variables (use Cloudflare secrets)

@@ -18,13 +18,15 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: budge-app
-          directory: dist
+      # Since we're now using Direct Upload deployment from Cloudflare Pages
+      # We don't need this action anymore, but keeping it commented for reference
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/pages-action@v1.5.0
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     projectName: budge-app
+      #     directory: dist
       - name: Deploy Workers
         uses: cloudflare/wrangler-action@v3
         with:

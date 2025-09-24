@@ -1,24 +1,21 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
 
+import type { Budget as ApiBudget, Category as ApiCategory } from '../types';
+
 // Types
-type Category = {
-  id: string;
-  name: string;
-  amount: number;
+type Category = ApiCategory & {
   color?: string;
-  budget_id: string;
   period?: string;
-  created_at: string;
-  updated_at: string;
 };
 
 type Budget = {
   id: string;
   user_id: string;
-  total_amount: number;
-  period_start: string;
-  period_end: string;
+  name: string; // Added name field
+  total_amount: number; // This maps to 'amount' in the API
+  period_start: string; // This maps to 'start_date' in the API
+  period_end: string; // This maps to 'end_date' in the API
   created_at: string;
   updated_at: string;
   categories?: Category[];
@@ -107,6 +104,7 @@ export const BudgetProvider = ({ children }: { children: ReactNode }) => {
         const mockBudget: Budget = {
           id: 'mock-budget-id',
           user_id: user.id,
+          name: 'Monthly Budget',
           total_amount: 5000,
           period_start: '2023-09-01',
           period_end: '2023-09-30',
