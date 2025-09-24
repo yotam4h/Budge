@@ -1,0 +1,45 @@
+---
+// AuthLayout.astro - Layout for login, registration and other non-authenticated pages
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="generator" content={Astro.generator}>
+  <title>Budge - Your Personal Budget Tracker</title>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-center">
+          <a href="/" class="font-bold text-xl flex items-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500">
+              <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 5V12L16 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="ml-2">Budge</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center">
+      <slot />
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white border-t py-4">
+      <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+        &copy; {new Date().getFullYear()} Budge. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

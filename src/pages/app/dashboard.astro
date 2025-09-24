@@ -1,0 +1,90 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SpendingChart from '../../components/dashboard/SpendingChart';
+import BudgetSummary from '../../components/dashboard/BudgetSummary';
+import TransactionList from '../../components/transactions/TransactionList';
+import { AppProviders } from '../../components/AppProviders';
+---
+
+<MainLayout title="Dashboard | Budge">
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold">Dashboard</h1>
+      <p class="text-gray-600">Welcome to your financial overview</p>
+    </div>
+    
+    <AppProviders client:load>
+      <div class="grid md:grid-cols-12 gap-6">
+        <!-- Left column -->
+        <div class="col-span-12 md:col-span-8">
+          <div class="bg-white rounded-lg shadow mb-6">
+            <div class="p-6">
+              <h2 class="text-xl font-semibold mb-4">Monthly Overview</h2>
+              <SpendingChart client:load />
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow">
+            <div class="p-6">
+              <h2 class="text-xl font-semibold mb-4">Recent Transactions</h2>
+              <TransactionList client:load />
+            </div>
+          </div>
+              </div>
+            </div>
+            
+            <div class="border-b pb-2">
+              <div class="flex justify-between">
+                <div>
+                  <p class="font-medium">Internet Bill</p>
+                  <p class="text-sm text-gray-500">Utilities</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-red-600 font-medium">-$65.00</p>
+                  <p class="text-sm text-gray-500">Sep 5, 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-4 text-center">
+          </div>
+        </div>
+        
+        <!-- Right column -->
+        <div class="col-span-12 md:col-span-4">
+          <div class="bg-white rounded-lg shadow mb-6">
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Budget Summary</h2>
+                <a href="/app/budget" class="text-sm text-blue-600 hover:underline">Edit</a>
+              </div>
+              
+              <BudgetSummary client:load />
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow">
+            <div class="p-6">
+              <h2 class="text-xl font-semibold mb-4">Quick Add</h2>
+              <div class="grid grid-cols-2 gap-3">
+                <a href="/app/transactions?type=expense" class="bg-gray-50 hover:bg-gray-100 rounded-lg p-4 text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-1 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  <span class="text-sm font-medium">Expense</span>
+                </a>
+                <a href="/app/transactions?type=income" class="bg-gray-50 hover:bg-gray-100 rounded-lg p-4 text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-1 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  <span class="text-sm font-medium">Income</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </AppProviders>
+  </div>
+</MainLayout>

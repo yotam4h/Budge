@@ -1,0 +1,35 @@
+name = "budge-api"
+main = "./workers/api/index.ts"
+compatibility_date = "2023-09-20"
+
+# Development settings
+[dev]
+port = 8787
+
+# Bind D1 database
+[[d1_databases]]
+binding = "DB"
+database_name = "budge"
+database_id = "budge"
+migrations_dir = "workers/migrations"
+
+# Environment variables (replace with your own values in production)
+[vars]
+JWT_SECRET = "budge_development_secret"
+
+# Production settings
+[env.production]
+workers_dev = false
+route = "api.budge.app/*"
+zone_id = "your-zone-id"
+
+# Production database 
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "budge_prod"
+database_id = "your-production-database-id"
+migrations_dir = "workers/migrations"
+
+# Production environment variables (use Cloudflare secrets)
+[env.production.vars]
+JWT_SECRET = ""  # Use `wrangler secret put JWT_SECRET` to set this securely

@@ -1,0 +1,37 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TransactionForm from '../../components/transactions/TransactionForm';
+import TransactionList from '../../components/transactions/TransactionList';
+---
+
+<MainLayout>
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold">Transactions</h1>
+    <p class="text-gray-600">Track your income and expenses</p>
+  </div>
+  
+  <div class="grid md:grid-cols-12 gap-6">
+    <!-- Transaction list -->
+    <div class="col-span-12 md:col-span-8">
+      <div class="bg-white rounded-lg shadow">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Recent Transactions</h2>
+            <div class="flex space-x-2">
+              <button class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">All</button>
+              <button class="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full">Income</button>
+              <button class="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full">Expenses</button>
+            </div>
+          </div>
+          
+          <TransactionList client:load />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Transaction form -->
+    <div class="col-span-12 md:col-span-4">
+      <TransactionForm client:load />
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,48 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import BudgetForm from '../../components/budget/BudgetForm';
+import CategoryList from '../../components/budget/CategoryList';
+---
+
+<MainLayout>
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold">Budget</h1>
+    <p class="text-gray-600">Set up and manage your budget</p>
+  </div>
+  
+  <div class="grid md:grid-cols-12 gap-6">
+    <div class="col-span-12 md:col-span-8">
+      <div class="bg-white rounded-lg shadow">
+        <div class="p-6">
+          <BudgetForm client:load />
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-span-12 md:col-span-4">
+      <div class="bg-white rounded-lg shadow">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-4">Budget Tips</h2>
+          <ul class="space-y-2 text-sm">
+            <li class="pb-2 border-b">
+              <p class="font-medium">50/30/20 Rule</p>
+              <p class="text-gray-600">Allocate 50% to needs, 30% to wants, and 20% to savings and debt repayment.</p>
+            </li>
+            <li class="pb-2 border-b">
+              <p class="font-medium">Emergency Fund</p>
+              <p class="text-gray-600">Aim to save 3-6 months of expenses for emergencies.</p>
+            </li>
+            <li class="pb-2 border-b">
+              <p class="font-medium">Track Every Expense</p>
+              <p class="text-gray-600">Log all transactions to get an accurate view of your spending habits.</p>
+            </li>
+            <li>
+              <p class="font-medium">Review Monthly</p>
+              <p class="text-gray-600">Regularly review and adjust your budget based on your financial situation.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,14 @@
+---
+import AuthLayout from '../layouts/AuthLayout.astro';
+import LoginForm from '../components/auth/LoginForm';
+---
+
+<AuthLayout>
+  <div class="w-full max-w-md">
+    <LoginForm client:load />
+    
+    <p class="mt-6 text-center text-sm text-gray-500">
+      Don't have an account? <a href="/register" class="text-blue-600 hover:underline">Sign up</a>
+    </p>
+  </div>
+</AuthLayout>

@@ -1,0 +1,163 @@
+---
+// Landing page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Budge - Take Control of Your Finances</title>
+  <meta name="description" content="Budge is a simple, effective tool for managing your personal finances.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="flex-shrink-0 flex items-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500">
+              <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 5V12L16 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="ml-2 text-2xl font-bold text-gray-900">Budge</span>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a href="/login" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Log in</a>
+          <a href="/register" class="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-blue-500 hover:bg-blue-600">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+        <div>
+          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+            Your finances, simplified
+          </h1>
+          <p class="text-xl mb-8">
+            Budge helps you plan, track, and improve your financial life with easy budgeting tools.
+          </p>
+          <div class="flex">
+            <a href="/register" class="px-6 py-3 bg-white text-blue-600 font-medium rounded-md hover:bg-gray-100">
+              Get Started - It's Free
+            </a>
+          </div>
+        </div>
+        <div class="mt-10 lg:mt-0 flex justify-center">
+          <!-- Placeholder for hero image -->
+          <div class="w-full max-w-md bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="p-4 bg-gray-100 border-b">
+              <div class="flex items-center">
+                <span class="h-3 w-3 bg-red-400 rounded-full mr-2"></span>
+                <span class="h-3 w-3 bg-yellow-400 rounded-full mr-2"></span>
+                <span class="h-3 w-3 bg-green-400 rounded-full"></span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="mb-4 h-8 bg-gray-200 rounded animate-pulse"></div>
+              <div class="space-y-2">
+                <div class="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+                <div class="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+              </div>
+              <div class="mt-6 grid grid-cols-3 gap-4">
+                <div class="bg-blue-100 h-24 rounded-lg"></div>
+                <div class="bg-green-100 h-24 rounded-lg"></div>
+                <div class="bg-yellow-100 h-24 rounded-lg"></div>
+              </div>
+              <div class="mt-4 h-32 bg-gray-100 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900">Features to help you master your money</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gray-50 rounded-lg p-6">
+          <div class="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Simple Budgeting</h3>
+          <p class="text-gray-600">Create budgets with custom categories and track your spending in real-time.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-gray-50 rounded-lg p-6">
+          <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Insightful Reports</h3>
+          <p class="text-gray-600">View your spending patterns and progress with visual charts and detailed reports.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-gray-50 rounded-lg p-6">
+          <div class="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600">
+              <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Goals</h3>
+          <p class="text-gray-600">Set savings goals and track your progress as you work toward financial targets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Ready to take control of your finances?</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Join thousands of users who have improved their financial lives with Budge.
+      </p>
+      <a href="/register" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700">
+        Create your free account
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="md:flex md:items-center md:justify-between">
+        <div class="flex items-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500">
+            <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 5V12L16 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="ml-2 text-xl font-bold text-gray-900">Budge</span>
+        </div>
+        <div class="mt-6 md:mt-0 flex space-x-6 text-gray-600">
+          <a href="#" class="hover:text-blue-600">About</a>
+          <a href="#" class="hover:text-blue-600">Privacy</a>
+          <a href="#" class="hover:text-blue-600">Terms</a>
+          <a href="#" class="hover:text-blue-600">Contact</a>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-500">
+        &copy; {new Date().getFullYear()} Budge. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
